@@ -10,12 +10,10 @@ n=10
 def aleatorio(n):
     lista=[]
     for i in range(n):
-        a=random.randrange(1,11,1)
-        if a in lista:
-            i-=1
-            continue
-        else:
-            lista.append(a)
+        a=random.randrange(0,10,1)
+        while a in lista:
+            a=random.randrange(0,10,1)
+        lista.append(a)
     return lista
             
 def invertida(n):
@@ -36,7 +34,7 @@ def alterna(n):
         if i%2==0:
             lista.append(int(i/2))
         else:
-            lista.append(10-int((i-1)/2))
+            lista.append(9-int((i-1)/2))
     return lista
         
 #n variables
@@ -51,3 +49,4 @@ if __name__=="__main__":
     print(invertida(n))
     print(quasiordenada(n))
     print(alterna(n))
+    
